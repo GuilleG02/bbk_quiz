@@ -97,3 +97,9 @@ body {
 .hide {
   display: none;
 }
+
+#scoreChart {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  background-color: #f4f4f4;
+}
