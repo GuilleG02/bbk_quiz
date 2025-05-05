@@ -43,6 +43,9 @@ body {
   box-shadow: 0 4px 8px black;
 }
 
+#question {
+  padding: 0rem 0rem 1rem 0rem;
+}
 
 #answer-buttons button {
   display: block;
@@ -58,7 +61,7 @@ body {
 
 
 #answer-buttons button:hover {
-  background: white;
+  background: whitesmoke;
 }
 
 

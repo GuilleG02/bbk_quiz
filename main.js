@@ -7,6 +7,7 @@ const answerButtonsElement = document.getElementById('answer-buttons');
 
 let currentQuestionIndex = 0;
 let questionList = [];
+let score = 0;
 
 const API_URL = 'https://opentdb.com/api.php?amount=10&type=multiple';
 
@@ -157,25 +158,35 @@ function selectAnswer(e) {
     setStatusClass(button);
   });
 
+  if (selectedButton.dataset.correct) score++;
+
   if (questionList.length > currentQuestionIndex + 1) {
     nextButton.classList.remove('hide');
 
   } else {
 
+    storeData();
     startButton.innerText = 'Restart';
     startButton.classList.remove('hide');
   }
 }
 
-//Esta función le pone color al botón según si la respuesta es correcta o no.
+function storeData() {
+
+  let stats = JSON.parse(localStorage.getItem("stats") || "[]");
+  const entry = {
+    "score": score,
+    "date": new Date()
+  }
+  stats.push(entry);
+  localStorage.setItem("stats", JSON.stringify(stats));
+  score = 0;
+}
+
 function setStatusClass(element) {
 
-  if (element.dataset.correct) {
-    element.classList.add('color-correct');
-  } else {
-
+  element.dataset.correct ? element.classList.add('color-correct') : 
     element.classList.add('color-wrong');
-  }
 }
 
 //Navegación entre preguntas
