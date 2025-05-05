@@ -8,44 +8,35 @@
 </head>
 <body>
 
-    <nav>
-        <a href="home.html">Home</a>
-        <a href="quiz.html">Quiz</a>
-    </nav>
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="quiz.html">Quiz</a>
+</nav>
 
 
-  <h1>Resultados del Quiz</h1>
+  <h1 style="text-align: center; margin-top: 1%; margin-bottom: 1%;">Resultados del Quiz</h1>
 
-  <canvas id="resultChart"></canvas>
-  <br>
-  <button onclick="window.location.href='index.html'">Reiniciar Quiz</button>
+  <div class="result-container">
+    <div class="score-circle">
+      <span id="scoreText">0/10</span>
+    </div>
+    <p>¡Muchas gracias por jugar!</p>
+    <button class="controls-button" onclick="window.location.href='home.html'">
+      Jugar otra vez
+    </button>
+  </div>
+
 
   <script>
-    const data = JSON.parse(localStorage.getItem("lastScore") || "{}");
-    const correct = data.correct || 0;
-    const total = data.total || 10;
-    const incorrect = total - correct;
 
-    const ctx = document.getElementById('resultChart').getContext('2d');
-    new Chart(ctx, {
-      type: 'doughnut',
-      data: {
-        labels: ['Correctas', 'Incorrectas'],
-        datasets: [{
-          data: [correct, incorrect],
-          backgroundColor: ['#4caf50', '#f44336']
-        }]
-      },
-      options: {
-        plugins: {
-          title: {
-            display: true,
-            text: `${correct} de ${total} respuestas correctas`
-          }
-        }
-      }
-    });
+  const data = JSON.parse(localStorage.getItem("lastScore") || "{}");
+  const correct = data.correct || 0;
+  const total = data.total || 10;
+
+  document.getElementById("scoreText").textContent = `${correct}/${total}`;
   </script>
+
+
 
 </body>
 </html>

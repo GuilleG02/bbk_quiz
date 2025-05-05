@@ -113,7 +113,42 @@ canvas {
 
 }
 
+ .result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
 
+.score-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #ccfce1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+#scoreText {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: black;
+}
+
+.controls-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  border: none;
+  border-radius: 5px;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+}
 
 
 
