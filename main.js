@@ -114,7 +114,6 @@ function selectAnswer(e) {
   }   else {
 
     // Guardardamos la puntuación actual para usarla en results.html
-
       localStorage.setItem("lastScore", JSON.stringify({
       correct: score,
       total: questionList.length
@@ -122,11 +121,9 @@ function selectAnswer(e) {
     }));
 
     //Metodo de Guardar
-
     storeData();
 
-    // Redirigir a página de resultados
-    
+    // Redirigir a página de resultados    
     window.location.href = "results.html";
   }
 
