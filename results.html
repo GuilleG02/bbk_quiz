@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="main.js" defer></script>
-    <title>Quiz App</title>
+  <meta charset="UTF-8">
+  <title>Resultados</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -14,6 +13,39 @@
         <a href="quiz.html">Quiz</a>
     </nav>
 
+
+  <h1>Resultados del Quiz</h1>
+
+  <canvas id="resultChart"></canvas>
+  <br>
+  <button onclick="window.location.href='index.html'">Reiniciar Quiz</button>
+
+  <script>
+    const data = JSON.parse(localStorage.getItem("lastScore") || "{}");
+    const correct = data.correct || 0;
+    const total = data.total || 10;
+    const incorrect = total - correct;
+
+    const ctx = document.getElementById('resultChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Correctas', 'Incorrectas'],
+        datasets: [{
+          data: [correct, incorrect],
+          backgroundColor: ['#4caf50', '#f44336']
+        }]
+      },
+      options: {
+        plugins: {
+          title: {
+            display: true,
+            text: `${correct} de ${total} respuestas correctas`
+          }
+        }
+      }
+    });
+  </script>
 
 </body>
 </html>

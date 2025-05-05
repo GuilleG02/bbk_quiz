@@ -109,12 +109,25 @@ function selectAnswer(e) {
   if (questionList.length > currentQuestionIndex + 1) {
     nextButton.classList.remove('hide');
 
-  } else {
+  }   else {
+
+    // Guardardamos la puntuación actual para usarla en results.html
+
+      localStorage.setItem("lastScore", JSON.stringify({
+      correct: score,
+      total: questionList.length
+
+    }));
+
+    //Metodo de Guardar
 
     storeData();
-    startButton.innerText = 'Restart';
-    startButton.classList.remove('hide');
+
+    // Redirigir a página de resultados
+    
+    window.location.href = "results.html";
   }
+
 }
 
 function storeData() {
