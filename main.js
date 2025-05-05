@@ -12,47 +12,47 @@ let score = 0;
 const API_URL = 'https://opentdb.com/api.php?amount=10&type=multiple';
 
 //Funcion que crea nuestras preguntas manuales para mezclar con las de la API
-function getLocalQuestions() {
-  return [
-    {
-      question: "¿Cuál es la capital del País Vasco?",
-      answers: [
-        { text: "Bilbao", correct: false },
-        { text: "Córdoba", correct: false },
-        { text: "Vitoria-Gasteiz", correct: true },
-        { text: "Pamplona", correct: false }
-      ]
-    },
-    {
-      question: "¿Qué lengua cooficial se habla en el País Vasco junto al español?",
-      answers: [
-        { text: "Catalán", correct: false },
-        { text: "Euskera", correct: true },
-        { text: "Gallego", correct: false },
-        { text: "Aranés", correct: false }
-      ]
-    },
-    {
-      question: "¿Cuál de estos platos es típico de la gastronomía vasca?",
-      answers: [
-        { text: "Gazpacho", correct: false },
-        { text: "Marmitako ", correct: true },
-        { text: "Fabada", correct: false },
-        { text: "Escalivada", correct: false }
-      ]
-    },
-    {
-      question: "¿Qué monte es el más alto del País Vasco?",
-      answers: [
-        { text: "Txindoki", correct: false },
-        { text: "Gorbea ", correct: true },
-        { text: "Anboto", correct: false },
-        { text: "Jaizkibel", correct: false }
-      ]
-    }
-    // Puedes agregar más
-  ];
-}
+// function getLocalQuestions() {
+//   return [
+//     {
+//       question: "¿Cuál es la capital del País Vasco?",
+//       answers: [
+//         { text: "Bilbao", correct: false },
+//         { text: "Córdoba", correct: false },
+//         { text: "Vitoria-Gasteiz", correct: true },
+//         { text: "Pamplona", correct: false }
+//       ]
+//     },
+//     {
+//       question: "¿Qué lengua cooficial se habla en el País Vasco junto al español?",
+//       answers: [
+//         { text: "Catalán", correct: false },
+//         { text: "Euskera", correct: true },
+//         { text: "Gallego", correct: false },
+//         { text: "Aranés", correct: false }
+//       ]
+//     },
+//     {
+//       question: "¿Cuál de estos platos es típico de la gastronomía vasca?",
+//       answers: [
+//         { text: "Gazpacho", correct: false },
+//         { text: "Marmitako ", correct: true },
+//         { text: "Fabada", correct: false },
+//         { text: "Escalivada", correct: false }
+//       ]
+//     },
+//     {
+//       question: "¿Qué monte es el más alto del País Vasco?",
+//       answers: [
+//         { text: "Txindoki", correct: false },
+//         { text: "Gorbea ", correct: true },
+//         { text: "Anboto", correct: false },
+//         { text: "Jaizkibel", correct: false }
+//       ]
+//     }
+//     // Puedes agregar más
+//   ];
+// }
 
 //Funcion que tre preguntas desde la (API)
 async function loadQuestionsFromAPI() {
@@ -78,8 +78,8 @@ async function loadQuestionsFromAPI() {
     });
 
     //Combinar preguntas api y las nuestras
-    questionList = [...getLocalQuestions(), ...apiQuestions]; 
-    questionList = questionList.sort(() => Math.random() - 0.5).slice(0, 10);
+    // questionList = [...getLocalQuestions(), ...apiQuestions]; 
+    // questionList = questionList.sort(() => Math.random() - 0.5).slice(0, 10);
 
     startGame();
   } catch (error) {
