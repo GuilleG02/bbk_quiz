@@ -47,14 +47,22 @@ body {
   padding: 0rem 0rem 1rem 0rem;
 }
 
+#answer-buttons {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
 #answer-buttons button {
   display: block;
   width: 100%;
-  margin: 0.5rem 0;
-  padding: 1rem;
+  /* margin: 0.5rem 0; */
+  padding: 4rem 1rem;
   border: none;
   border-radius: 5px;
   background: white;
+  /* border: 1px solid ; */
+  box-shadow: 1px 1px 6px 0px rgb(175, 174, 174);
   cursor: pointer;
   transition: background 0.3s;
 }
@@ -155,7 +163,11 @@ canvas {
   cursor: pointer;
 }
 
-
+@media (max-width: 768px) {
+  #answer-buttons {
+    grid-template-columns: 1fr;
+  }
+}
 
 
 
