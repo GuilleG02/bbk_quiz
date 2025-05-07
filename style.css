@@ -9,7 +9,7 @@
 
 
 nav {
-  background-color: gray;
+  background-color: rgb(80, 38, 197);
   padding: 1rem;
   display: flex;
   justify-content: space-around;
@@ -113,13 +113,18 @@ canvas {
 
 }
 
- .result-container {
+.result-container {
+  max-width: 800px;
+  margin: 4rem auto;
+  background: white;
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  text-align: center;
+  justify-content: space-around;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .score-circle {
