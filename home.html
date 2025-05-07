@@ -10,14 +10,119 @@
     <title>Quiz App</title>
 </head>
 <body>
-    
-    <!-- Aqui va el grafico -->
-    <nav>
-        <a href="home.html">Home</a>
-        <a href="quiz.html">Quiz</a>
-    </nav>
+    <style>
+     .header {
+      background-color: #1976d2;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      font-family: 'Arial', sans-serif;
+    }
 
-    <div id="chart"></div>
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+    }
+
+    .card h2, .card h3 {
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #135ba1;
+    }
+
+    #chart {
+      width: 100%;
+      height: 250px;
+    }
+
+    /* Responsive para PC/tablet */
+    @media (min-width: 768px) {
+      .container {
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+      }
+
+      .card {
+        flex: 1;
+        max-width: none;
+        height: 100%;
+      }
+
+      #chart {
+        height: 220px;
+      }
+      
+      .btn {
+        margin-top: 89%;
+      }
+    }
+
+    /* Móvil */
+    @media (max-width: 600px) {
+      .card {
+        padding: 1rem;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      #chart {
+        height: 200px;
+      }
+    }
+    </style>
+    <!-- Aqui va el grafico -->
+    <!-- <nav>
+        <a href="home.html">Home</a>
+        
+    </nav> -->
+
+    <div class="header">Quiz</div>
+
+    <div class="container">
+      <div class="card">
+        <h2>¡Welcome to the quiz!</h2>
+        <button class="btn" onclick="location.href='quiz.html'">Take the Quiz</button>
+      </div>
+
+      <div class="card">
+        <h3>Your stats</h3>
+        <div id="chart"></div>
+      </div>
+    </div>
+
 
 </body>
 </html>
